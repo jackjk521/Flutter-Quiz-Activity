@@ -47,6 +47,7 @@ class _LoginState extends State<Login> {
                   obscureText: obscureText,
                   onTap:(setPasswordVisibility),
                   textEditingController: passwordTextController,
+                
                 ),
                  SizedBox(
                   height: 20.0,

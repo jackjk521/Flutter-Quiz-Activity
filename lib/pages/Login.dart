@@ -2,21 +2,21 @@
 // ignore_for_file: file_names, duplicate_ignore
 
 import 'package:flutter/material.dart';
+import 'package:flutter_quiz_1/pages/Dashboard.dart';
 import 'package:flutter_quiz_1/widgets/CustomTextInputField.dart';
 import 'package:flutter_quiz_1/widgets/PasswordField.dart';
 import 'package:flutter_quiz_1/widgets/PrimaryButton.dart';
 
 class Login extends StatefulWidget {
- 
+  static const String routeName = "login";
 
   @override
   _LoginState createState() => _LoginState();
 }
 
 class _LoginState extends State<Login> {
-  
   final TextEditingController emailTextController = TextEditingController();
-  final TextEditingController passwordTextController = TextEditingController()
+  final TextEditingController passwordTextController = TextEditingController();
   bool obscureText = true;
 
   @override
@@ -45,26 +45,31 @@ class _LoginState extends State<Login> {
                   labelText: "Password",
                   hintText: "Enter Valid Password",
                   obscureText: obscureText,
-                  onTap:(setPasswordVisibility),
+                  onTap: setPasswordVisibility,
                   textEditingController: passwordTextController,
-                
                 ),
-                 SizedBox(
+                SizedBox(
                   height: 20.0,
                 ),
-                PrimaryButton(labelText: "Login", iconData: Icons.login, onPress:(){}),
+                PrimaryButton(
+                    labelText: "Login",
+                    iconData: Icons.login,
+                    onPress: loginNoValidation),
               ],
             ),
           ),
         ),
       ),
     ));
-    
   }
-  void setPasswordVisibility(){
-      setState(() {  
-          obscureText = !obscureText;
-      });
-    }
-  
+
+  void setPasswordVisibility() {
+    setState(() {
+      obscureText = !obscureText;
+    });
+  }
+
+  void loginNoValidation() {
+    Navigator.pushReplacementNamed(context, Dashboard.routeName);
+  }
 }

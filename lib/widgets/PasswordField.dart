@@ -7,18 +7,14 @@ import 'package:flutter/material.dart';
 class PasswordField extends StatelessWidget {
   final String labelText;
   final String hintText;
-  final IconData iconData;
   final TextEditingController textEditingController;
-  final TextInputType textInputType;
   final bool obscureText;
-  final Function onTap;
+  final void Function() onTap;
 
   PasswordField(
       {required this.labelText,
       required this.hintText,
-      required this.iconData,
       required this.textEditingController, //not needed idk why it will error
-      required this.textInputType,
       required this.obscureText,
       required this.onTap});
 
@@ -32,7 +28,7 @@ class PasswordField extends StatelessWidget {
             child: Icon(Icons.lock),
           ),
           suffixIcon: GestureDetector(
-            onTap: onTap(),
+            onTap: onTap,
             child: Icon(obscureText ? Icons.visibility_off : Icons.visibility),
           ),
           labelText: labelText,

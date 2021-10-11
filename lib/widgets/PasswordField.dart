@@ -1,5 +1,3 @@
-// ignore: file_names
-
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
@@ -22,6 +20,7 @@ class PasswordField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       controller: textEditingController,
+      obscureText: obscureText,
       decoration: InputDecoration(
           prefixIcon: Container(
             padding: EdgeInsets.symmetric(horizontal: 35.0),

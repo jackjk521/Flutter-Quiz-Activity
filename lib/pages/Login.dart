@@ -10,6 +10,8 @@ import 'package:flutter_quiz_1/widgets/PrimaryButton.dart';
 class Login extends StatefulWidget {
   static const String routeName = "login";
 
+  const Login({Key? key}) : super(key: key);
+
   @override
   _LoginState createState() => _LoginState();
 }
@@ -28,7 +30,7 @@ class _LoginState extends State<Login> {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                SizedBox(
+                const SizedBox(
                   height: 20.0,
                 ),
                 CustomTextInputField(
@@ -38,7 +40,7 @@ class _LoginState extends State<Login> {
                   textInputType: TextInputType.emailAddress,
                   textEditingController: emailTextController,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20.0,
                 ),
                 PasswordField(
@@ -48,7 +50,7 @@ class _LoginState extends State<Login> {
                   onTap: setPasswordVisibility,
                   textEditingController: passwordTextController,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20.0,
                 ),
                 PrimaryButton(

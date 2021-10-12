@@ -1,7 +1,6 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
-import 'package:flutter_quiz_1/pages/Dashboard.dart';
 import 'package:flutter_quiz_1/pages/Login.dart';
 
 class Settings extends StatefulWidget {
@@ -27,8 +26,13 @@ class _SettingsState extends State<Settings> {
               margin: const EdgeInsets.only(top: 20.0),
               child: ElevatedButton.icon(
                   onPressed: () {
-                    Navigator.pop(context, Dashboard.routeName);
-                    Navigator.pushReplacementNamed(context, Login.routeName);
+                    Navigator.of(context).pushAndRemoveUntil(
+                      // the new route
+                      MaterialPageRoute(
+                        builder: (BuildContext context) => Login(),
+                      ),
+                      (Route route) => false,
+                    );
                   },
                   icon: const Icon(Icons.logout),
                   label: const Text("Logout"),

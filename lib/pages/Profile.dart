@@ -9,16 +9,20 @@ class Profile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Profile') 
+        title: Text('Profile'),
+        backgroundColor: Colors.purple[500],
       ),
-
-      body: Center(
-        child: Column(children:[
-          Text("Hi there!"),
-          Image.network('https://images.unsplash.com/photo-1543852786-1cf6624b9987?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=687&q=80'),
-        ],
+      body: SingleChildScrollView(
+        child: Center(
+          child: Column(
+            children: [
+              Text("Hi there!"),
+              Image.network(
+                  'https://images.unsplash.com/photo-1543852786-1cf6624b9987?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=687&q=80'),
+            ],
+          ),
         ),
-       ),
-      );
+      ),
+    );
   }
 }
